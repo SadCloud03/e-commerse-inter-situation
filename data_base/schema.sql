@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS Users (
     email TEXT NOT NULL UNIQUE,
     country_code TEXT NOT NULL,
     created_at DATE NOT NULL,
-    FOREIGN KEY (country_code) REFERENCES Countries(code)
+    FOREIGN KEY (country_code) REFERENCES Countries(code) 
 );
 
 CREATE TABLE IF NOT EXISTS Orders (
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS ProductsDetails (
     stock INTEGER NOT NULL DEFAULT 0,
     rating REAL NOT NULL,
     weight REAL NOT NULL,
-    FOREIGN KEY (product_id) REFERENCES Products(id)
+    FOREIGN KEY (product_id) REFERENCES Products(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS OrderItems (
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS OrderItems (
     product_id INTEGER NOT NULL,
     quantity INTEGER NOT NULL,
     unit_price REAL NOT NULL,
-    FOREIGN KEY (order_id) REFERENCES Orders(id),
+    FOREIGN KEY (order_id) REFERENCES Orders(id), 
     FOREIGN KEY (product_id) REFERENCES Products(id)
 );
 
@@ -61,5 +61,5 @@ CREATE TABLE IF NOT EXISTS ShippingRegions (
     region TEXT NOT NULL,
     shipping_zone TEXT NOT NULL,
     estimated_days INTEGER NOT NULL,
-    FOREIGN KEY (country_code) REFERENCES Countries(code)
+    FOREIGN KEY (country_code) REFERENCES Countries(code) ON DELETE CASCADE
 );
