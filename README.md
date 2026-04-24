@@ -20,6 +20,7 @@ This is a work-related exercise I completed while working with a new Data Engine
     * `shipping_regions.csv`
     * `users.csv`
 * `dataBaseModel.ipynb`
+* `consults_sprint.ipynb`
 * `fixingShippingRegions.ipynb`
 * `README.md`
 
@@ -67,4 +68,5 @@ pip install pandas requests ipykernel
 ```
 * Open dataBaseModel.ipynb to inspect raw data and map the relationships.
 * Open fixingShippingRegions.ipynb to execute the API calls and repair the shipping_regions table.
+* Open consult_sprint.ipynb to execute the test querys to the new data Base.
 ```
